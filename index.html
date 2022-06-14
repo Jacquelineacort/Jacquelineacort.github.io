@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>To Do List</title>
+
+<!-- css part  -->
+	<style>
+
+			body{
+				background-color: linen;
+				border: 8px dotted salmon;
+				height: 1060px;
+
+				
+			}
+			h1 {font-size:40 px ; font-family: 'Georgia';}
+  			h2 {font-size:20 px; font-family: 'Georgia';}
+
+  			.toppage{
+
+  				background-color: salmon;
+  				padding: 5px;
+  				margin-left: 75px;
+  				margin-right:75px;
+  				height:200; 
+  			}
+
+			.container {
+
+			    width: 360px;
+			    top: 50%;
+			    border-radius: 20px;
+			    min-width: 600px;
+			}
+
+			#input {
+			    width: 400px;
+			    height: 40px;
+	
+			    border-radius: 15px;
+			    border: 2px solid black;
+			    font-size: 20px;
+			    vertical-align: middle;
+			    font-family: 'Georgia';
+			}
+
+			#addtolist {
+			    height: 45px;
+			    width: 80px;
+			    background-color: salmon;
+			    border-radius: 15px;
+			    border: 2px solid black;
+			    vertical-align: middle;
+			    font-size: 25px;
+			    font-family: 'Georgia';
+			    
+			}
+
+			.notesection {
+			    margin: .5;
+			    cursor: pointer;
+			    font-size: 25px;
+			}
+
+			.Items{
+			    margin-top: 25px;
+			    text-align: left;
+			    
+	</style>
+</head>
+
+<body>
+
+	<br>
+
+<!--  start of ghibli image insterted form GIPHY -->
+<center>
+
+<br>
+
+
+  	<iframe src="https://giphy.com/embed/F99PZtJC8Hxm0" width="480" height="256" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/studio-ghibli-spirited-away-F99PZtJC8Hxm0"></a></p>
+
+<!-- End of ghibli gif image insterted form GIPHY -->
+
+<!-- Start of the Top part of webpage:  -->
+	<div class="toppage">
+
+			<h1> Welcome To Your Online To-Do List</h1>
+			<h3>Dynamic Web Design Final Project - Online To Do List</h3>
+	</div>
+<!-- End of the top part of webpage -->
+
+
+
+
+<!-- start of conatiner code  -->
+
+<u>
+    <h1>To Do List</h1>
+</u>
+
+    <div class="container">
+
+    <input id="input" type="text" placeholder="E.g.Complete Final Project">
+
+			<!-- button to add new iteam -->
+			        <button id="addtolist">Add</button>
+			<!--   end of button to add new item code  -->
+
+
+			<!-- this is where all the tnew o do will be found in -->
+			        <div class="Items" id="todoitem"> </div>
+    </div>
+
+
+<!--  End of container code -->
+
+</center>
+<!-- javascript part of the code -->
+
+
+    <script>
+
+
+
+// this is the button for adding to list : the id i gave to button is 'addtolist'
+    	let addbutton = document.getElementById('addtolist');
+
+//located in container : todoitem 
+		let todoitem = document.getElementById('todoitem');
+
+//input : the area where the task are put into 
+		let input = document.getElementById('input');
+
+
+// eventlist part of the code : where the click of the button will create the to do list : create element
+	addbutton.addEventListener('click', function()
+	{
+   		 var note = document.createElement('p');
+
+//class style for the notes
+
+    	note.classList.add('notesection');
+
+//giving value to input section of the to do list: when you type it in and it appears
+
+    	note.innerText = input.value;
+
+ // append child is where it allows you to add a note (string) to the end of the list.. append it it 'todoitem list' "list of children"
+
+  		todoitem.appendChild(note);
+
+// when typing in the box where you add to list the value wont stay in the box: give an empty string 
+
+   		input.value = "";
+
+  
+  
+    })
+
+
+
+
+    </script>
+
+  
+</body>
+</html>
